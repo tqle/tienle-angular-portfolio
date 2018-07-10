@@ -1,0 +1,38 @@
+<div class="graphCard">
+  <header class="graphCardHeader">
+      <h3>{{title}}</h3>
+      <h4>{{subTitle}}</h4>
+  </header>
+
+<!--RADIAL PROGRESS INDICATOR-->
+<section class="graph">
+  <!--Outer div is for ARIA accessibility-->
+  <div role="progressbar" [attr.aria-valuenow]="strokeDashOffset" aria-valuemin="0" aria-valuemax="100">
+      <svg width="120" height="120" viewBox="0 0 120 120">
+          <!-- EMPTY OR DEFAULT RING METER-->
+         
+          <circle id="outer_progress_meter" class="progress_meter" [ngClass]="meterColor" cx="60" cy="60" r="54" stroke-width="12">
+              <title>Remaining Outer Percentage: {{100 - strokeDashOffset}}%</title>
+          </circle>
+          <circle id="inner_progress_meter" class="progress_meter" [ngClass]="meterColor" cx="60" cy="60" r="34" stroke-width="12">
+              <title>Remaining Inner Percentage: {{100 - innerStrokeDashOffset}}%</title>
+          </circle>
+          <!-- CENTER TEXT-->
+          <text class="circle-text-progress-value" x="60" y="65">{{strokeDashOffset}}%</text>
+
+          <!-- INDICATOR RING WITH PROGRESS VALUE-->
+          <circle id="outer_progress_value" class="progress_value" [ngClass]="valueColor1" cx="60" cy="60" r="54"
+           stroke-width="12" stroke-dasharray="339.292"
+          [attr.stroke-dashoffset]="calculateProgress(strokeDashOffset)">
+            <title>Outer Percentage: {{strokeDashOffset}}%</title>
+          </circle>
+          <circle id="inner_progress_value" class="progress_value" [ngClass]="valueColor2" cx="60" cy="60" r="34"
+          stroke-width="12" stroke-dasharray="239.292"
+         [attr.stroke-dashoffset]="calculateProgress(innerStrokeDashOffset)">
+            <title>Inner Percentage: {{innerStrokeDashOffset}}%</title>
+         </circle>
+      </svg>
+    </div>
+</section>
+<!--END RADIAL PROGRESS INDICATOR-->
+</div>

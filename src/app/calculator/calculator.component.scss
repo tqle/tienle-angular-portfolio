@@ -1,0 +1,101 @@
+
+@import '~sass/variables';
+.graphCard{
+    background-color: $defaultBackgroundColor;
+    box-shadow: $defaultBoxShadow;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.graphCardHeader {
+    padding: 1rem;
+    width: 10rem;
+}
+
+.graphCardHeader > h3{
+    color: #039be5;
+}
+
+.graph{
+    display: inline-flex;
+    background-color: #011924;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: content-box;
+    align-items: flex-end;
+    margin: 0 1rem 1rem 1rem;
+    color: $white;
+}
+.calc{
+    // width: 400px;
+    width: 10rem;
+    padding: 0.125rem;
+    background-color: #011924;
+    color: white;
+ }
+
+.screen{
+    // font-size: 40px;
+    // font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+    padding: 1rem 0.5rem;
+    overflow: hidden;
+    min-width: 5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 0.25rem 0.25rem 0 0;
+    background: darken($primaryColor,5%);
+    border-bottom: 1px solid $black;
+}
+
+.calc-button{
+    background-color: #d8d9db;
+    color: black;
+    // height: 100px;
+    height: 2rem;
+    width: 24.5%; /* black gutter */
+    border: none;
+    border-radius: 0;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.calc-button:hover{
+    background-color: #ebebeb;
+}
+
+.calc-button:active{
+    background-color: #bbbcbe;
+}
+
+.calc-button:last-child{
+    // background-color: #df974c;
+    background-color: $primaryColor;
+    color: white;
+}
+
+.calc-button:last-child:hover{
+    background-color: lighten($primaryColor,10%);
+}
+
+.calc-button:last-child:active{
+    background-color: darken($primaryColor,20%);
+}
+
+.double{
+    width: 49.7%;
+}
+
+.triple{
+    width: 74.8%;
+}
+
+.calc-button-row{
+    display: flex;
+    align-content: stretch;
+    justify-content: space-between;
+    margin-bottom: 0.5%;
+}
+

@@ -1,0 +1,412 @@
+@import '~sass/variables';
+
+[class*='col-'] {
+    margin-right:1rem;
+    margin-bottom:1rem;
+  }
+    /** TODO: Refactor */
+  a {
+    text-decoration: none;
+  }
+  /** TODO: Refactor */
+  *, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  /* Fix crappy angular css to use flexbox instead of floats*/
+  /* Dashboard container for tiles */
+  .grid {
+    margin: 0;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /*border:1px solid blue;*/
+  }
+
+  /* Dasboard Tile */
+  .col-1-4 {
+    width: 25%;
+    /*border:1px solid lime;*/
+  }
+  /* Module Hero Tile */
+  .module {
+    padding: 20px;
+    text-align: center;
+    color: #777;
+    max-height: 10rem;
+    min-width: 10rem;
+    background-color: #ffffff;
+    border-radius: 0;
+    border:1px solid rgb(214, 214, 214);
+    /*border-left: 0.5rem solid #039be5;*/
+}
+
+.tileStyle-1{
+    border-left: 0.25rem solid #F44336;
+}
+
+.avatarIcon{
+  font-size: 2rem;
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+}
+
+.tileAvatar-1.avatarIcon{
+  // background-color: #F44336;
+  background: #e91e63;
+  background: linear-gradient(138deg, #e91e63 0%, #fd6a2d 100%);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: inline-flex;
+}
+
+.tileStyle-2{
+  border-left: 0.25rem solid #e5039a;
+}
+
+.tileAvatar-2.avatarIcon{
+  // background-color: #e5039a;
+  background: #e5039a;
+  background: linear-gradient(138deg, #e5039a 0%, #9C27B0 100%);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: inline-flex;
+}
+
+.tileStyle-3{
+  border-left: 0.25rem solid #CDDC39;
+}
+
+.tileAvatar-3.avatarIcon{
+  background: #CDDC39;
+  background: linear-gradient(138deg, #CDDC39 0%, #FFEB3B 100%);
+  width: 4rem;
+  /* border: 00.063rem  solid #373802; */
+  height: 4rem;
+  border-radius: 50%;
+  display: inline-flex;
+}
+
+.tileStyle-4{
+  border-left: 0.25rem solid #00BFA5;
+}
+
+.tileAvatar-4.avatarIcon{
+  // background-color: #00BFA5;
+  background: #00BFA5;
+  background: linear-gradient(138deg, #14bfa5 0%, #cddc39 100%);
+  width: 4rem;
+  /* border: 0.063rem solid #02381f; */
+  height: 4rem;
+  border-radius: 50%;
+  display: inline-flex;
+}
+.module:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}
+/* Outer Dashboard tile container padding */
+.grid-pad {
+  /*padding: 10px 0;*/
+  margin: 0.5rem 0;
+  /*border:1px solid lime;*/
+}
+
+  /* DEPRECATED. Useless */
+  .grid-pad > [class*='col-']:last-of-type {
+    /*padding-right: 20px;*/
+  }
+  @media (max-width: 600px) {
+    .module {
+      font-size: 10px;
+      max-height: 75px; }
+  }
+  @media (max-width: 1024px) {
+    .grid {
+      margin: 0;
+    }
+    .module {
+      min-width: 60px;
+    }
+  }
+
+.dashboardContainer{
+  margin: 2rem;
+}
+
+/* Tile Box Shadow Effect 1*/
+ .tile-box-shadow-effect1{
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 5px 0px, rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.117647) 0px 3px 1px -2px;
+	/* -webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777; */
+}
+
+/*==================================================
+ * Effect 2
+ * ===============================================*/
+.tile-box-shadow-effect2
+ {
+   position: relative;
+ }
+ .tile-box-shadow-effect2:before, .tile-box-shadow-effect2:after
+ {
+   z-index: -1;
+   position: absolute;
+   content: "";
+   bottom: 15px;
+   left: 10px;
+   width: 50%;
+   top: 80%;
+   max-width:300px;
+   /*background: #777;*/
+   background: rgb(63, 62, 62);
+   -webkit-box-shadow: 0 15px 10px #777;
+   -moz-box-shadow: 0 15px 10px #777;
+   box-shadow: 0 15px 10px #777;
+   -webkit-transform: rotate(-3deg);
+   -moz-transform: rotate(-3deg);
+   -o-transform: rotate(-3deg);
+   -ms-transform: rotate(-3deg);
+   transform: rotate(-3deg);
+ }
+ .tile-box-shadow-effect2:after
+ {
+   -webkit-transform: rotate(3deg);
+   -moz-transform: rotate(3deg);
+   -o-transform: rotate(3deg);
+   -ms-transform: rotate(3deg);
+   transform: rotate(3deg);
+   right: 10px;
+   left: auto;
+ }
+ 
+ /*==================================================
+  * Effect 3
+  * ===============================================*/
+  .tile-box-shadow-effect3
+ {
+   position: relative;
+ }
+ .tile-box-shadow-effect3:before
+ {
+   z-index: -1;
+   position: absolute;
+   content: "";
+   bottom: 15px;
+   left: 10px;
+   width: 50%;
+   top: 80%;
+   max-width:300px;
+   background: #777;
+   -webkit-box-shadow: 0 15px 10px #777;
+   -moz-box-shadow: 0 15px 10px #777;
+   box-shadow: 0 15px 10px #777;
+   -webkit-transform: rotate(-3deg);
+   -moz-transform: rotate(-3deg);
+   -o-transform: rotate(-3deg);
+   -ms-transform: rotate(-3deg);
+   transform: rotate(-3deg);
+ }
+ 
+ /*==================================================
+  * Effect 4
+  * ===============================================*/
+  .tile-box-shadow-effect4
+ {
+   position: relative;
+ }
+ .tile-box-shadow-effect4:after
+ {
+   z-index: -1;
+   position: absolute;
+   content: "";
+   bottom: 15px;
+   right: 10px;
+   left: auto;
+   width: 50%;
+   top: 80%;
+   max-width:300px;
+   background: #777;
+   -webkit-box-shadow: 0 15px 10px #777;
+   -moz-box-shadow: 0 15px 10px #777;
+   box-shadow: 0 15px 10px #777;
+   -webkit-transform: rotate(3deg);
+   -moz-transform: rotate(3deg);
+   -o-transform: rotate(3deg);
+   -ms-transform: rotate(3deg);
+   transform: rotate(3deg);
+ }  
+ 
+ /*==================================================
+  * Effect 5
+  * ===============================================*/
+  .tile-box-shadow-effect5
+ {
+   position: relative;
+ }
+ .tile-box-shadow-effect5:before, .tile-box-shadow-effect5:after
+ {
+   z-index: -1;
+   position: absolute;
+   content: "";
+   bottom: 25px;
+   left: 10px;
+   width: 50%;
+   top: 80%;
+   max-width:300px;
+   background: #777;
+   -webkit-box-shadow: 0 35px 20px #777;
+   -moz-box-shadow: 0 35px 20px #777;
+   box-shadow: 0 35px 20px #777;
+   -webkit-transform: rotate(-8deg);
+   -moz-transform: rotate(-8deg);
+   -o-transform: rotate(-8deg);
+   -ms-transform: rotate(-8deg);
+   transform: rotate(-8deg);
+ }
+ .tile-box-shadow-effect5:after
+ {
+   -webkit-transform: rotate(8deg);
+   -moz-transform: rotate(8deg);
+   -o-transform: rotate(8deg);
+   -ms-transform: rotate(8deg);
+   transform: rotate(8deg);
+   right: 10px;
+   left: auto;
+ }
+ 
+ /*==================================================
+  * Effect 6
+  * ===============================================*/
+  .tile-box-shadow-effect6
+ {
+     position:relative;       
+     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+ }
+ .tile-box-shadow-effect:before, .tile-box-shadow-effect6:after
+ {
+   content:"";
+     position:absolute; 
+     z-index:-1;
+     -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     box-shadow:0 0 20px rgba(0,0,0,0.8);
+     top:50%;
+     bottom:0;
+     left:10px;
+     right:10px;
+     -moz-border-radius:100px / 10px;
+     border-radius:100px / 10px;
+ } 
+ .tile-box-shadow-effect6:after
+ {
+   right:10px; 
+     left:auto;
+     -webkit-transform:skew(8deg) rotate(3deg); 
+        -moz-transform:skew(8deg) rotate(3deg);     
+         -ms-transform:skew(8deg) rotate(3deg);     
+          -o-transform:skew(8deg) rotate(3deg); 
+             transform:skew(8deg) rotate(3deg);
+ }
+ 
+ /*==================================================
+  * Effect 7
+  * ===============================================*/
+ .effect7
+ {
+     position:relative;       
+     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+ }
+ .effect7:before, .effect7:after
+ {
+   content:"";
+     position:absolute; 
+     z-index:-1;
+     -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     box-shadow:0 0 20px rgba(0,0,0,0.8);
+     top:0;
+     bottom:0;
+     left:10px;
+     right:10px;
+     -moz-border-radius:100px / 10px;
+     border-radius:100px / 10px;
+ } 
+ .effect7:after
+ {
+   right:10px; 
+     left:auto;
+     -webkit-transform:skew(8deg) rotate(3deg); 
+        -moz-transform:skew(8deg) rotate(3deg);     
+         -ms-transform:skew(8deg) rotate(3deg);     
+          -o-transform:skew(8deg) rotate(3deg); 
+             transform:skew(8deg) rotate(3deg);
+ }
+ 
+ /*==================================================
+  * Effect 8
+  * ===============================================*/
+ .effect8
+ {
+     position:relative;       
+     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+ }
+ .effect8:before, .effect8:after
+ {
+   content:"";
+     position:absolute; 
+     z-index:-1;
+     -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+     box-shadow:0 0 20px rgba(0,0,0,0.8);
+     top:10px;
+     bottom:10px;
+     left:0;
+     right:0;
+     -moz-border-radius:100px / 10px;
+     border-radius:100px / 10px;
+ } 
+ .effect8:after
+ {
+   right:10px; 
+     left:auto;
+     -webkit-transform:skew(8deg) rotate(3deg); 
+        -moz-transform:skew(8deg) rotate(3deg);     
+         -ms-transform:skew(8deg) rotate(3deg);     
+          -o-transform:skew(8deg) rotate(3deg); 
+             transform:skew(8deg) rotate(3deg);
+ }  
+ 
+ .radial-stripe-1 {
+    color: white;
+    background: repeating-radial-gradient(
+      circle,
+      purple,
+      purple 10px,
+      #4b026f 10px, 
+      #4b026f 20px
+    );
+ }
+ .radial-stripe-2 {
+  color: white;
+  background: repeating-radial-gradient(
+    circle,
+    lightslategray,
+    lightslategray 10px,
+    white 10px, 
+    white 20px
+  );
+}

@@ -1,0 +1,98 @@
+/** Theme Typography **/
+@import './typography_variables';
+
+/* everywhere else */
+* {
+  font-family: $font-family-stack;
+}
+  
+html {
+  font-size: $defaultFontSize;
+}
+   
+body {
+  font-family: $font-family-stack;
+  font-weight: 400; /** TODO: Refactor to variable **/
+  line-height: 1.45; /** TODO: Refactor to variable **/
+  color: #333;  /** TODO: Refactor to variable **/
+}
+  
+p {
+  margin-bottom: 1.3rem;
+}
+  
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+//   margin: 1.414rem 0 0.5rem;
+  font-weight: inherit;
+  line-height: 1.2;
+  margin: 0.5rem 0;
+}
+  
+
+h1,.h1 {
+  font-size: $h1;
+  color: #113a4d;;
+}
+  
+h2,.h2 {
+  //font-size: 2.369em;
+  font-size: $h2;
+  font-weight: 600;
+  color: #039be5;
+}
+
+h3,.h3 {
+ //font-size: 1.777rem;
+  font-size: $h3;
+  color: #444;
+}
+
+h4,.h4 {
+  //font-size: 1.333rem;
+  font-size: $h4;
+}
+
+small, .font_small {
+  //font-size: 0.75rem;
+  font-size: $smallFontSize;
+}
+
+
+/** Font Weights **/
+.fontWeightExtraUltraLight {
+    font-weight: $fontWeightExtraUltraLight;
+}
+
+.fontWeightLight {
+    font-weight: $fontWeightLight;
+}
+
+.fontWeightBookDemi {
+    font-weight: $fontWeightBookDemi;
+}
+
+.fontWeightNormalRegular {
+    font-weight: $fontWeightNormalRegular;
+}
+
+.fontWeightMedium {
+    font-weight: $fontWeightMedium;
+}
+
+.fontWeightDemiBold {
+    font-weight: $fontWeightDemiBold;
+}
+
+.fontWeightBold{
+    font-weight: $fontWeightBold;
+}
+
+.fontWeightExtraBold {
+    font-weight: $fontWeightExtraBold;
+}
+
+.fontWeightExtraUltraBlack {
+    font-weight: $fontWeightExtraUltraBlack;
+}
+/** End Font Weights **/

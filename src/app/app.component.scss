@@ -1,0 +1,169 @@
+@import '~sass/variables';
+
+/* Application top banner */
+.application{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.banner {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    /*flex-direction: column;*/
+    background-color: $brandColor;
+    height: 3rem;
+    width: 100%;
+    // z-index: 1;
+
+    // display: flex;
+    // align-items: center;
+    // // justify-content: space-between;
+    // margin: 0;
+    // z-index: 10;
+    // position: fixed;
+    // text-align: center;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
+    // overflow: hidden;
+}
+
+/* Banner H1 custom title */
+.banner h1 {
+    /*align-self: center;*/
+    font-size: 1rem;
+    color: #ffffff;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.banner h4 {
+   color: #00BFA5;
+   margin-right: 1rem;
+}
+
+.content {
+  /*border:1px solid red;*/
+  height: 100%;
+}
+
+/* Horizontal Tab */
+nav.topNavigation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    /* background-color: #011924;  */
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    // margin: 0;
+    // z-index: 10;
+    // position: fixed;
+    // text-align: center;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
+    // overflow: hidden;
+    // background-color: #fafafa;
+    // padding: 8px 30px;
+}
+
+/* Background style 1 */
+.tabContainer{
+    background-color: #ffffff; 
+}
+
+/* Background style 2 */
+.tabContainer-2{
+    background-color: #011924; 
+}
+
+/* Vertial Tab */
+nav.topNavigation.verticalTab{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: #011924; 
+    margin: 0;
+}
+
+/* Top Navigation */
+nav.topNavigation a {
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    display: inline-block;
+    background-color: transparent; 
+    margin-right:0.25rem;
+    overflow: hidden;
+    min-width: 5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* Indent first navigation tab*/
+nav.topNavigation a:first-child{
+    margin-left: 1rem;
+}
+
+/* Inactive or Not Selected Tab */
+nav a:visited, a:link {
+    color: #607D8B;
+}
+  
+/* Hover Navigation Tab */
+nav a:hover {
+    background-color: transparent;
+    color: #25a3dd;
+    /* color: #00BFA5; */
+}
+
+/* Active Navigation Tab Selected */
+nav a.active {
+    color: #039be5;
+    background-color: white;
+    border-top: 0.25rem solid #00BFA5;
+}
+
+nav.topNavigation a.borderStyleBottom.active {
+    border-top: none;
+    border-bottom: 0.25rem solid #039be5;
+}
+
+/* nav a.active.borderStyleBottom{
+    border-top: none;
+    border-bottom: 0.25rem solid #039be5;
+} */
+
+/* Inactive or Not Selected Tab */
+nav a.borderStyleBottom:visited, a.borderStyleBottom:link {
+    color: #607D8B;
+    border-top: none;
+    border-bottom: 0.25rem solid #607D8B;
+}
+
+/* Button Styles */
+button {
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+    color: #888;
+    margin-bottom: 12px;
+    &:hover{
+        background-color: #cfd8dc;
+    }
+    &::disabled{
+        background-color: #eee;
+        color: #aaa;
+        cursor: auto;
+    }
+}

@@ -1,0 +1,38 @@
+/* MessagesComponent's private CSS styles */
+  /* button.clear {
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+
+  button.clear:hover {
+    background-color: #cfd8dc;
+  }
+   */
+button {
+  font-family: Arial;
+  background-color: #E91E63;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  cursor: pointer;
+  cursor: hand;
+  color: white;
+  margin-bottom: 0.5rem;
+  height: 1.75rem;;
+}
+
+button:hover {
+    background-color: #D81B60;
+}
+  button.clear:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+  }

@@ -1,0 +1,99 @@
+@import "./functions";
+
+@mixin alert-text($color: #f33) {
+    background-color: $color;
+    color: $white;
+    font-variant: small-caps;
+}
+
+.error-text {
+    @include alert-text;
+}
+
+.has-error:after{
+    @include alert-text();
+    display: inline-block;
+    content: attr(ata-error);
+}
+
+@mixin btn-color($color){
+    background-color: $color;
+    color: $white;
+}
+
+@mixin range-thumb(){
+  &::-webkit-slider-thumb {
+    @content;
+  }
+  &::-moz-range-thumb {
+    @content;
+  }
+  &::-ms-thumb {
+    @content;
+  }
+}
+
+@mixin range-track(){
+  &::-webkit-slider-runnable-track{
+    @content;
+  }
+  &::-moz-range-track{
+    @content;
+  }
+  &::-ms-track {
+    @content;
+  }
+}
+
+@mixin theme($primary-color,$rotate: 120deg, $darkenpct:20%){
+    $other-color: adjust-hue($primary-color,$rotate);
+    $other2-color: adjust-hue($primary-color,180deg);
+    $secondary-color: adjust-hue($primary-color,-$rotate);
+    .btn-primary{
+        @include btn-base($primary-color,0);
+        // background-color: $primary-color;
+    }
+    .btn-secondary{
+        @include btn-base($secondary-color);
+        // background-color: $secondary-color;
+    }
+    .btn-other{
+        @include btn-base($other-color);
+        // background-color: $other-color;
+    }
+    .btn-other2{
+        @include btn-base($other2-color);
+        // background-color: $other2-color;
+    }
+}
+
+@function linearRgb($c){
+    @if $c <= 0.4045 {
+        @return $c / 12.92;
+    }
+    @else{
+        @return pow((($c + 0.055) / 1.055), 2.4);
+    }
+}
+
+@function luminance($color){
+    $r: linearRgb(red($color)/255);
+    $g: linearRgb(green($color)/255);
+    $b: linearRgb(blue($color)/255);
+
+    @return 0.2126*$r + 0.7152*$g + 0.0722*$b;
+}
+
+$white_luminance: luminance(white);
+
+@mixin btn-base($color, $darken_pct: 20%){
+    background-color: $color;
+    border-color: darken($color,$darken_pct);
+    @if abs(luminance($color) - $white_luminance) > 0.7{
+        color: $white;
+    }
+    &:hover{
+        background: lighten(saturate($color, 20%),10%);
+    }
+}
+

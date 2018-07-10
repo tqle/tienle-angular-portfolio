@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('widget-factory App', () => {
+describe('angular-portfolio App', () => {
   let page: AppPage;
 
   beforeEach(() => {

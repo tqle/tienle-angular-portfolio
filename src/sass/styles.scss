@@ -1,0 +1,279 @@
+//Keep UTF-8 encoding enforced. Required
+@charset 'utf-8'; 
+@import './typography';
+@import './variables';
+@import './mixins';
+@import './functions';
+
+/** Master Styles */
+
+/** Global Border Box declaration **/
+html {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after{
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@viewport{
+  width: device-width;
+  zoom: 0.5;
+}
+/** End Global */
+.container{
+  margin: 2rem;
+}
+  
+.box-spacing{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.toolbar{
+  display:flex;
+}
+
+.toolbar button{
+  margin-right: 0.5rem;
+}
+
+.margin-right{
+  margin-right: 0.5rem;
+}
+
+/* Force items to be align vertical to flex end or the bottom */
+.flex-align-items-flex-end{
+  display:flex;
+  align-items:flex-end; 
+}
+
+/** TODO: Move this to a custom range slider component **/
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+  @include range-track(){
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+  }
+  @include range-thumb(){
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -14px;
+  }
+  // &::-webkit-slider-runnable-track {
+  //   width: 100%;
+  //   height: 8.4px;
+  //   cursor: pointer;
+  //   animate: 0.2s;
+  //   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  //   background: #3071a9;
+  //   border-radius: 1.3px;
+  //   border: 0.2px solid #010101;
+  // }
+  // &::-webkit-slider-thumb {
+  //   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  //   border: 1px solid #000000;
+  //   height: 36px;
+  //   width: 16px;
+  //   border-radius: 3px;
+  //   background: #ffffff;
+  //   cursor: pointer;
+  //   -webkit-appearance: none;
+  //   margin-top: -14px;
+  // }
+  &:focus::-webkit-slider-runnable-track {
+    background: #367ebd;
+  }
+  // &::-moz-range-track {
+  //   width: 100%;
+  //   height: 8.4px;
+  //   cursor: pointer;
+  //   animate: 0.2s;
+  //   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  //   background: #3071a9;
+  //   border-radius: 1.3px;
+  //   border: 0.2px solid #010101;
+  // }
+  // &::-moz-range-thumb {
+  //   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  //   border: 1px solid #000000;
+  //   height: 36px;
+  //   width: 16px;
+  //   border-radius: 3px;
+  //   background: #ffffff;
+  //   cursor: pointer;
+  
+  // }
+  // &::-ms-track {
+  //   width: 100%;
+  //   height: 8.4px;
+  //   cursor: pointer;
+  //   animate: 0.2s;
+  //   background: transparent;
+  //   border-color: transparent;
+  //   border-width: 16px 0;
+  //   color: transparent;
+  // }
+  &::-ms-fill-lower {
+    background: #2a6495;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  &::-ms-fill-upper {
+    background: #3071a9;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  // &::-ms-thumb {
+  //   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  //   border: 1px solid #000000;
+  //   height: 36px;
+  //   width: 16px;
+  //   border-radius: 3px;
+  //   background: #ffffff;
+  //   cursor: pointer;
+  // }
+  &:focus::-ms-fill-lower {
+    background: #3071a9;
+  }
+  &:focus::-ms-fill-upper {
+    background: #367ebd;
+  }
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #000000;
+  // &:hover:not(:disabled) {
+  //   // box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+  // }
+  &.btn--mode-primary {
+    background-color: $primaryColor;
+    color: $white;
+  }
+  &.btn--mode-secondary {
+    background-color: $accentColor;
+    color: #000;
+  }
+  &:disabled {
+    color: #666;
+    opacity: 0.5;
+    .btn__price {
+      background-color: $neutralColor;
+    }
+  }
+  &__price {
+    background-color: $accentColor;
+      padding: 1px 3px;
+
+  }
+}
+
+.theme-1 {
+  @include theme($graphColor5,100deg);
+}
+
+.theme-2 {
+  @include theme($graphColor4, $darkenpct: 10%);
+}
+
+.theme-3 {
+  @include theme($graphColor6);
+
+}
+
+/** Generate H1 to H6 using SASS for loops*/
+// @for $i from 1 through 6{
+//   h#{$i} {
+//     font-size: 5rem - $i*0.75rem;
+//   }
+// }
+
+/** Data Structures - List and @each */
+// $myList: 0 0 2px #000;
+// .foo {
+//   /** Shadow blur radious:
+//   * #{nth($myList, 3)}
+//   */
+//   box-shadow: $myList;
+// }
+
+/** Iterating list item using @each */
+// .foo2 {
+//   @each $i in $myList {
+//     /* #{$i} */
+//   }
+
+// }
+/** nth, nth starts at 1, not 0*/
+// $gradients:
+// (to left top, blue, red),
+// (to left top, blue, yellow);
+
+// .foo3{
+//   background-color: linear-gradient(nth($gradients,2));
+// }
+
+/** Maps */
+// $myMap: (
+//   dark: #009,
+//   light: #66f
+// );
+
+// @mixin theme-button($t){
+//   /* Theme #{$t} */
+//   color: map-get($myMap, $t);
+// }
+
+// .btn-dark {
+//   @include theme-button('dark');
+// }
+
+// .btn-light {
+//   @include theme-button('light');
+// }
+
+/** Build increments of 5rem for  margin and padding
+using excessive class for each possible padding and
+margin direction. Not recommended, more of atomic css.
+*/
+// $dimensions:('m': 'margin','p': 'padding');
+// $directions: (t: 'top',b: 'bottom',l: 'left',r: 'right');
+// @each $dim in $dimensions {
+//   @each $dir in $directions {
+//     @for $i from 1 through 5 {
+//       $size: $i * 5;
+//       .#{nth($dim,1)}-#{nth($dir,1)}-#{$size} {
+//         #{nth($dim,2)}-#{nth($dir,2)}: #{$size}rem;
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,43 @@
+<div class="graphCard">
+  <header class="graphCardHeader">
+      <h3>{{title}}</h3>
+      <h4>{{subTitle}}</h4>
+  </header>
+  <section class="graph">
+<!-- CALCULATOR -->
+<div class="calc">
+  <section class="screen" title="{{buffer}}">{{buffer}}</section>
+  <section class="calc-buttons">
+      <div class="calc-button-row">
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">C</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">←</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">±</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">÷</button>
+      </div>
+      <div class="calc-button-row">
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">7</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">8</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">9</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">×</button>
+      </div>
+      <div class="calc-button-row">
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">4</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">5</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">6</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">-</button>
+      </div>
+      <div class="calc-button-row">
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">1</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">2</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">3</button>
+        <button class="calc-button" (click)="buttonClick($event.target.innerText)">+</button>
+      </div>
+      <div class="calc-button-row">
+        <button class="calc-button triple" (click)="buttonClick($event.target.innerText)">0</button>
+        <button class="calc-button"(click)="buttonClick($event.target.innerText)">=</button>
+      </div>
+  </section>
+  </div>
+  <!-- CALCULATOR -->
+  </section>
+  </div>

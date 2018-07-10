@@ -1,0 +1,26 @@
+<div class="graphCard">
+  <header class="graphCardHeader">
+      <h3>{{title}}</h3>
+      <h4>{{subTitle}}</h4>
+  </header>
+
+  <!--STAR RATING INDICATOR-->
+  <section class="graph">
+  <div class="ratingContainer">
+    <div class="stars" [(attr.data-stars)]="size">
+      <svg *ngFor="let in of counter(5); let i = index;" 
+      height="25" width="23" 
+      class="star"
+      [attr.data-rating]="i+1"
+      (click)="toggleRating(i+1)">
+        <title>{{showRatingTitle()}}</title>
+        <polygon [ngClass]="showRatingStyle(i+1)" points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" style="fill-rule:nonzero;"/>
+      </svg>
+    </div> 
+    <!-- NOTE: ng-container doesn't render any dom elements -->
+    <ng-container *ngIf="showLabel">
+      <label class="ratingLabel" for="Rating Indicator">{{showRatingTitle()}}</label>
+    </ng-container>
+  </div>
+</section>
+</div>

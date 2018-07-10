@@ -1,0 +1,101 @@
+.row{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/** Add column margin wildcard for all columns */
+[class*="col-"]{
+    margin-left: 4%;
+    flex: 0 0 92%;
+}
+
+//Background visual identifier
+
+.col-1-2,.col-1-4 {
+    background-color: #ffc;
+}
+//Background visual identifier
+
+.col-2 {
+    background-color: #ccf;
+}
+//Background visual identifier
+
+.col-3 {
+    background-color: #fcf;
+}
+//Background visual identifier
+.col-4 {
+    background-color: #cff;
+}
+
+/** Mobile Landscape Screen Sizes */
+@media only screen and (min-width: 480px) {
+    .col-1-2,.col-2{
+        flex: 0 0 44%;
+    }
+    .col-1-4,
+    .col-3,
+    .col-4 {
+        flex: 0 0 92%;
+    }
+    .col-6-3{
+        flex: 0 0 44%;
+    }
+    .col-3-6{
+        flex: 0 0 44%;
+    }
+    .col-6-3{
+        flex: 0 0 92%;
+        order: -1;
+    }
+}
+
+/** Desktop screen sizes */
+@media only screen and (min-width: 768px){
+    /** Row one column 1, Margin is 4%, each column of 4 columns is 20% total is 96%
+    20% (column %) * 1 (number of columns) = 20%
+    */
+    .col-1-2, 
+    .col1-4{
+        flex: 0 0 20%;
+    }
+    /**  Row column 2, Margin is 4%, each column is 
+     20% (columns) * 2 (number of columns)+ 4%  x 1 (gutter between the 2 columns) = 44%
+    */
+    .col-2{
+        flex: 0 0 44%;
+    }
+
+     /**  Row column 3, Margin is 4%, each column is 
+     20% (columns) * 3 (number of columns)+ 4% x 2 (gutter between the 3 columns) = 68%
+    */
+    .col-3{
+        flex: 0 0 68%;
+    }
+
+    /*  Row column 4, Margin is 4%, each column is 
+     20% (columns) * 4 (number of columns)+ 4% x 3 (gutter between the 4 columns) = 92%
+    */
+    .col-4{
+        flex: 0 0 92%;
+    }
+    .col-6-3{
+        flex: 0 0 44%;
+        order: 0;
+    }
+    
+    .col-3-6{
+        flex: 0 0 20%;
+    }
+
+    .reverse {
+        flex-direction: row-reverse;
+    }
+
+    .reverse [class*='col-1']{
+        margin-left: 0;
+        margin-right: 4%;
+    }
+
+}

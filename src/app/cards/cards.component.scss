@@ -1,0 +1,175 @@
+@import "~sass/variables";
+
+/** Graph card layout container */
+.layoutContainer{
+    display:flex;
+    background-color: #CFD8DC;
+    overflow:auto;
+    width: 100%;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    background: rgb(195,34,144);
+    background: linear-gradient(138deg, rgba(195,34,144,1) 0%, rgba(253,106,45,1) 100%);
+}
+
+/** Graph card container */
+.columnCard{
+    background-color: $defaultBackgroundColor;
+    box-shadow: $defaultBoxShadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.columnCard-borderRadius {
+    border-radius: 1rem 0;
+}
+
+/** Horizontal Row Card Container */
+.rowCard{
+    background-color: $defaultBackgroundColor;
+    box-shadow: $defaultBoxShadow;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.rowCard-borderRadius {
+    border-radius: 1rem 0;
+}
+
+.cardHeader {
+    padding: 1rem;
+    width: 10rem;
+}
+
+.cardHeader > h3{
+    color: #039be5;
+}
+
+.cardFooter {
+    display: inline-flex;
+}
+
+/** Default Vertical Bottom Aligned Graphs */
+.cardContent{
+    display: inline-flex;
+    background-color: $brandColor;
+    list-style: none;
+    height: 6rem;
+    padding: 1rem;
+    box-sizing: content-box;
+    align-items: flex-end;
+    margin: 1rem;
+}
+
+.cardContent-borderRadius{
+    border-radius: 1rem 0;
+}
+
+.cardContent-noMargin{
+    margin:0;
+}
+
+.graphBar{
+    background-color: #ffffff;
+    color: #011924;
+    margin-left: 0.125rem;
+    padding: 0.5rem;
+}
+
+
+/** Bar Color Styles */
+.graphBarStyle1{
+    background-color: #00BFA5;
+}
+
+.graphBarStyle1:hover{
+    background-color: #4DB6AC;
+}
+
+.graphBarStyle2{
+    background-color: #E91E63;
+}
+
+.graphBarStyle2:hover{
+    background-color: #F06292;
+}
+
+.graphBarStyle3{
+    background-color: #F44336;
+}
+
+.graphBarStyle3:hover{
+    background-color: #E57373;
+}
+
+.graphBarStyle4{
+    background-color: #9C27B0;
+}
+
+.graphBarStyle4:hover{
+    background-color: #BA68C8;
+}
+
+.graphBarStyle5{
+    background-color: #CDDC39;
+}
+
+.graphBarStyle5:hover{
+    background-color: #DCE775;
+}
+
+.graphBarStyle6{
+    background-color: #007AFF;
+}
+
+.graphBarStyle6:hover{
+    background-color: #007AFF;
+}
+/** End Bar Color Styles */
+
+/** Rounded Graph Bar Curve */
+.roundedBar{
+    border-radius: 2rem;
+}
+
+.roundedTopBar{
+    border-radius: 2rem 2rem 0 0;
+}
+
+.roundedBottomBar{
+    border-radius: 0 0 2rem 2rem;
+}
+
+/** End Rounded Graph Bar Curve */
+
+/** Saw Graph Bar Top Right Curve */
+.sawToothBarTopRight{
+    border-radius: 0 2rem 0 0;
+}
+
+/** Saw Graph Bar Down Left Curve */
+.sawToothBarTopLeft{
+    border-radius: 2rem 0 0 0;
+}
+
+.sawToothBarTopLeft + .sawToothBarTopRight{
+    margin:0;
+}
+/** Saw Tool Bar Down Right Curve */
+.sawToothBarDownLeft{
+    border-radius: 0 0 0 2rem;
+}
+
+/** Saw Tool Bar Down Left Curve */
+.sawToothBarDownRight{
+    border-radius: 0 0 2rem 0;
+}
+
+/** Twist Graph Bar */
+.twistedBar{
+   border-radius: 2rem 0;
+}

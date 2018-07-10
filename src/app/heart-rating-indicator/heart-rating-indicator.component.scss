@@ -1,0 +1,81 @@
+@import '~sass/variables';
+.graphCard{
+    background-color: $defaultBackgroundColor;
+    box-shadow: $defaultBoxShadow;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.graphCardHeader {
+    padding: 1rem;
+    width: 10rem;
+}
+
+.graphCardHeader > h3{
+    color: #039be5;
+}
+
+.graph{
+    display: inline-flex;
+    background-color: #011924;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: content-box;
+    align-items: flex-end;
+    margin: 0 1rem 1rem 1rem;
+    color: $white;
+}
+
+/** HEART RATING INDICATOR **/
+.hearts{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.ratingLabel{
+    font-size: 0.75rem;
+}
+
+.verticalHearts{
+    display: flex;
+    flex-direction: column;
+}
+
+/** Unselected or default empty rating **/
+.emptyRating{
+    fill: $white;
+    opacity: 0.25;
+}
+
+/** Selected Star Rating */
+.selectedRating{
+    fill: $primaryColor;
+    opacity: 1;
+}
+
+.ratingColor1{
+    fill: $graphColor1;
+}
+
+.ratingColor2{
+    fill: $graphColor2;
+}
+
+.ratingColor3{
+    fill: $graphColor3;
+}
+
+.ratingColor4{
+    fill: $graphColor4;
+}
+
+.ratingColor5{
+    fill: $graphColor5;
+}
+
+.ratingColor6{
+    fill: $graphColor6;
+}

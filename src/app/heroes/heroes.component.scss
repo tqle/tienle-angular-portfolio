@@ -1,0 +1,136 @@
+@import '~sass/variables';
+
+/** CUSTOM INPUT **/
+.input-container{
+    width: 10rem;
+}
+
+.input-field{
+    border: 1px solid #cccccc;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.input-label{
+    display: inline-block;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-field input {
+    border: 1px solid transparent;
+    height: 1.75rem;
+    width: 95%;
+}
+
+.input-field input:focus {
+    outline-offset: 0;
+    outline:none;
+}
+/** END CUSTOM INPUT **/
+
+.heroes {
+    margin: 0 0 2rem 0;
+    list-style-type: none;
+    padding:0;
+    width: 100%;
+}
+
+.heroes li {
+    display:flex;
+    font-family: Helvetica, Arial;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #EEE;
+    margin: 0.5rem 0;
+    padding: 0;
+    height: 2rem;
+    border-radius: 0.25rem;
+    align-items: center;
+    /* box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 5px 0px, rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.117647) 0px 3px 1px -2px; */
+
+}
+
+.heroes li.selected:hover{
+    background-color: #BBD8DC;
+    color: white;
+}
+
+.heroes li:hover{
+    color:#607D8B;
+    background-color: #DDD;
+    /*left: 0.1rem;*/
+}
+
+.heroes a {
+    color: #888;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width:100%;
+}
+
+.heroes a:hover{
+    color: #607D8B;
+}
+
+.heroes .badge {
+    font-family: Arial;
+    font-size: .889rem;
+    color: white;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    /*background-color: #607D8B;*/
+    background-color: #039be5;    
+    line-height: 1;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    min-width:1rem;
+    text-align: right;
+    border-radius: 0.25rem 0 0 0.25rem;
+    /* box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 5px 0px, rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.117647) 0px 3px 1px -2px; */
+}
+
+.heroes .text{
+    align-self: center;
+    margin-right: 1rem;
+    width:100%;
+}
+
+button {
+    font-family: Arial;
+    background-color: #E91E63;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    cursor: pointer;
+    cursor: hand;
+    color: white;
+    margin-bottom: 0.5rem;
+    height: 1.75rem;;
+}
+
+button:hover {
+    background-color: #D81B60;
+}
+
+button.add:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+}
+
+.heroes button.delete {
+    background-color:transparent;
+    border-radius: 0;
+    border:none;
+    box-shadow: none;
+    color:#777;
+    align-self: flex-start;
+    margin-right:0.5rem;
+    text-align: center;
+}
+
+.heroes button.delete:hover{
+    color:rgb(37, 37, 37);
+}
+

@@ -1,0 +1,36 @@
+<div class="graphCard">
+    <header class="graphCardHeader">
+        <h3>{{title}}</h3>
+        <h4>{{subTitle}}</h4>
+    </header>
+  <section class="graph">
+    <!--RADIAL PROGRESS INDICATOR-->
+    <!--Outer div is for ARIA accessibility-->
+    <div class="progressBar" role="progressBar" [attr.aria-valuenow]="strokeDashOffset" aria-valuemin="0" aria-valuemax="100">
+      <svg width="200" height="36"> <!--TODO: Make height an @input that affects below text-->
+        <!-- PROGRESS METER -->
+        <path
+        class="progress_meter" 
+        [ngClass]="meterColor"
+        d="M0 10, 150 10">
+        <title>Remaining Percentage: {{100 - strokeDashOffset}}%</title>
+        </path>
+        <!--PROGRESS VALUE-->
+        <path
+        class="progress_value"
+        [ngClass]="valueColor"
+        d="M0 10, 150 10" 
+        [attr.stroke-miterlimit]="round"
+        [attr.stroke-dasharray]="strokeDashArray"
+        [attr.stroke-dashoffset]="calculateProgress(strokeDashOffset,strokeDashArray)">
+          <title>Actual Percentage: {{strokeDashOffset}}%</title>
+        </path>
+        <text class="text-progress-value" x="180" y="17">{{strokeDashOffset}}%</text>
+        <ng-container *ngIf="showLabel">
+           <!-- NOTE: ng-container doesn't render any dom elements -->
+        <text class="text-progress-below-value" x="0" y="32">{{descriptionText}}</text>
+        </ng-container>
+      </svg>
+    </div>
+  </section>
+</div>

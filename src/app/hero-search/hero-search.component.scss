@@ -1,0 +1,133 @@
+@import "~sass/variables";
+
+.holder{
+    position: relative;
+}
+
+.input-container{
+    width: 15rem;
+}
+
+.search-input-field{
+    // border: 1px solid #808080;
+    // border: 1px solid $brandColor;
+    border-radius: 1rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    // background: #0627b0;
+    // background: linear-gradient(138deg, #0627b0 0%, #007aff 100%);
+    background: #e91e63;
+    background: linear-gradient(138deg, #e91e63 0%, #fd6a2d 100%);
+}
+
+.input-label{
+    display: inline-block;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+  
+.search-input-field input {
+    background-color: transparent;
+    border: 1px solid transparent;
+    height: 1.75rem;
+    margin-left: 1rem;
+    color: $defaultBackgroundColor;
+    width: 12.5rem;
+}
+
+.search-input-field input:focus {
+    outline-offset: 0;
+    outline:none;
+}
+
+/** Search result list poover */
+ul.search-result {
+    position: fixed;
+    margin-top: 0;
+    padding-left: 0;
+    width: auto;
+    z-index: 1000;
+}
+
+/* HeroSearch private styles */
+.search-result li {
+    border-left: 1px solid rgb(185, 185, 185);
+    border-right: 1px solid rgb(185, 185, 185);
+    box-shadow: $defaultBoxShadow;
+    width: 15rem;
+    padding: 0.325rem;
+
+    background-color: white;
+    cursor: pointer;
+    list-style-type: none;
+    &:hover{
+        color:#607d8b;
+        background-color: #eee;
+    }
+    &:first-child{
+        border-top: 1px solid rgb(185, 185, 185);
+    }
+    &:last-child{
+        border-bottom: 1px solid rgb(185, 185, 185);
+    }
+    a{
+        margin-left: 0.75rem;
+        color: #011924;
+        display: block;
+        text-decoration: none;
+        &:hover{
+            color: #25a3dd;
+        }
+        &:active{
+            color: #25a3dd;
+        }
+
+    }
+}
+   
+// .search-result li a:hover {
+//     color: #25a3dd;
+// }
+
+// .search-result li a:active {
+//     color: #25a3dd;
+// }
+
+
+button {
+    font-family: Arial;
+    background-color: #E91E63;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    cursor: pointer;
+    cursor: hand;
+    color: white;
+    margin-bottom: 0.5rem;
+    height: 1.75rem;;
+}
+
+button:hover {
+    background-color: #D81B60;
+}
+
+button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+}
+
+.productionDataSets button.delete {
+    background-color:transparent;
+    border-radius: 0;
+    border:none;
+    box-shadow: none;
+    color:#777;
+    align-self: center;
+    margin-right:0.5rem;
+    text-align: center;
+}
+
+.productionDataSet button.delete:hover{
+    color:rgb(37, 37, 37);
+}

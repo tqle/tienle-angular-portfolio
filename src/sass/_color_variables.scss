@@ -1,0 +1,33 @@
+/* Theme Colors */
+$brandColor: #011924 !default;
+$primaryColor: #E91E63 !default;
+$accentColor: #00BFA5 !default;
+$neutralColor: #CFD8DC !default;
+
+
+$black: #000 !default;
+$white: #fff !default;
+
+/** Container Colors */
+$defaultBackgroundColor: $white;
+
+/** Graph Colors */
+$graphColor1: $accentColor; /** #00BFA5;*/
+$graphColor2: $primaryColor; /** #E91E63;*/
+$graphColor3:  #F44336 !default;
+$graphColor4: #9C27B0 !default;
+$graphColor5: #CDDC39 !default;
+$graphColor6:  #007AFF !default;
+
+/** Box Shadows */
+$defaultBoxShadow: rgba(0, 0, 0, 0.2) 0px 1px 5px 0px, rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.117647) 0px 3px 1px -2px;
+
+/** TEST ONLY */
+// $hopbush: #c69 !default;
+// $patina: #699 !default;
+// $venus: #998099 !default;
+// $nebula: #d2e1dd !default;
+
+$btn-disabled-opacity: 0.5 !default;
+
+/** END TEST ONLY */

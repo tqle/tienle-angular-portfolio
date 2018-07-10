@@ -1,0 +1,13 @@
+@import '~sass/variables';
+
+/** Layout container */
+.indicatorLayoutContainer{
+    display:flex;
+    background-color: #CFD8DC;
+    overflow:auto;
+    width: 100%;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    background: rgb(195,34,144);
+    background: linear-gradient(138deg, rgba(195,34,144,1) 0%, rgba(253,106,45,1) 100%);
+}

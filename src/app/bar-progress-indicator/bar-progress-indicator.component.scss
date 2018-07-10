@@ -1,0 +1,88 @@
+@import '~sass/variables';
+/** TODO: REFACTOR DUP CODE **/
+.graphCard{
+    background-color: $defaultBackgroundColor;
+    box-shadow: $defaultBoxShadow;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.graphCardHeader {
+    padding: 1rem;
+    // width: 10rem;
+}
+
+.graphCardHeader > h3{
+    color: #039be5;
+}
+
+.graph{
+    display: inline-flex;
+    background-color: #011924;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: content-box;
+    align-items: flex-end;
+    margin: 0 1rem 1rem 1rem;
+    color: $white;
+}
+/** TODO: REFACTOR DUP CODE **/
+
+.strokeColor1{
+    stroke: $graphColor1;
+}
+
+.strokeColor2{
+    stroke: $graphColor2;
+}
+
+.strokeColor3{
+    stroke: $graphColor3;
+}
+
+.strokeColor4{
+    stroke: $graphColor4;
+}
+
+.strokeColor5{
+    stroke: $graphColor5;
+}
+
+.strokeColor6{
+    stroke: $graphColor6;
+}
+
+.progress_value,.progress_meter{
+    fill: none;
+    stroke-width: 14;
+    stroke-miterlimit: round;
+    transition: stroke-dashoffset 850ms ease-in-out;
+}
+
+// .progressBar{
+//     display: flex;
+//     justify-content: center;
+// }
+/** Circle text progres value that appears in the radial indicator center **/
+.text-progress-value{
+    text-anchor: middle;
+    font-size: 1rem;
+    fill: $white;
+}
+
+.text-progress-below-value{
+    text-anchor: start;
+    font-size: 0.75rem;
+    fill: $white;
+}
+
+.progress_meter{
+    stroke: $white;
+    opacity: 0.25;
+}
+
+.progressLabel {
+    font-size: 0.75rem; 
+}

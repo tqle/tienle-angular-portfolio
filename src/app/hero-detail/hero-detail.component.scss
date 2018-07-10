@@ -1,0 +1,87 @@
+@import '~sass/variables';
+
+/** CUSTOM INPUT **/
+.input-container{
+    width: 10rem;
+}
+
+.input-field{
+    border: 1px solid #cccccc;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.input-label{
+    display: inline-block;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-field input {
+    border: 1px solid transparent;
+    height: 1.75rem;
+    width: 95%;
+}
+
+.input-field input:focus {
+    outline-offset: 0;
+    outline:none;
+}
+/** END CUSTOM INPUT **/
+
+/* Hero Detail's private CSS styles */
+// button {
+//     font-family: Arial;
+//     background-color: #eee;
+//     border: none;
+//     padding: 5px 10px;
+//     border-radius: 4px;
+//     cursor: pointer;
+//     cursor: hand;
+//     color: #888;
+//     margin-bottom: 0.5rem;
+// }
+
+// button:hover {
+//     background-color: #cfd8dc;
+// }
+
+// button:disabled {
+//     background-color: #eee;
+//     color: #aaa;
+//     cursor: auto;
+// }
+
+.labelName{
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+}
+
+.labelValue{
+    font-size: 0.875rem;
+}
+
+
+button {
+    font-family: Arial;
+    background-color: #E91E63;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    cursor: pointer;
+    cursor: hand;
+    color: white;
+    margin-bottom: 0.5rem;
+    height: 1.75rem;;
+}
+
+button:hover {
+    background-color: #D81B60;
+}
+
+button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+}

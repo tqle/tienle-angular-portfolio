@@ -1,0 +1,88 @@
+<div class="container">
+  <h2>Production Data Sets</h2>
+  <!-- ADD Production Data Set -->
+  <div class="productionData">
+      <div class="editForm">
+        <!-- start custom input -->
+        <div class="input-container">
+          <label class="input-label">Value: </label>
+          <div class="input-field">
+              <input #productionDataValue placeholder="Value"/>
+          </div>
+        </div>
+        <!-- end of custom input -->
+        <div class="selectContainer">
+          <label class="input-label">Hours: </label>
+          <div>
+                <select #productionDataUnit>
+                  <option selected="selected" value="Hours">Hours</option>
+                  <option value="minutes">Minutes</option>
+                </select>
+          </div>
+        </div>
+        <div class="selectContainer">
+            <label class="input-label">Factory: </label>
+            <div>
+              <select #productionDataFactory>
+                  <option selected="selected" value="Primary">Primary</option>
+                  <option value="Secondary">Secondary</option>
+              </select>
+            </div>
+        </div>
+      </div>
+      <button class="add" 
+      (click)="add(productionDataValue.value,productionDataUnit.value,productionDataFactory.value);
+      productionDataValue.value='';
+      productionDataUnit.value='Hours';
+      productionDataFactory.value='Primary'">Add</button>
+  </div>
+  <div class="productionDataSetsContainer">
+    <ul class="productionDataSets">
+      <li 
+      [class.selected]="productionData === selectedProductionData" 
+      [class.primaryFactory]="(productionData.factory | uppercase) === 'PRIMARY'" 
+      [class.secondaryFactory]="(productionData.factory | uppercase) === 'SECONDARY'"
+      *ngFor="let productionData of productionDataSets" 
+      (click)="onSelect(productionData)">
+      <!-- Add style class if factory is either primary or secondary -->
+        <span class="factory"
+        [class.primaryFactory]="(productionData.factory | uppercase) === 'PRIMARY'" 
+        [class.secondaryFactory]="(productionData.factory | uppercase) === 'SECONDARY'">
+          <div class="factoryAvatar"
+          [class.primaryFactory]="(productionData.factory | uppercase) === 'PRIMARY'" 
+          [class.secondaryFactory]="(productionData.factory | uppercase) === 'SECONDARY'">
+          {{productionData.factory.substring(0,1)}}
+        </div>
+        <h4>{{productionData.factory | uppercase}} Factory</h4>
+        </span>
+        <span class="productData">
+          <div class="labelName">Value: </div>
+          <div class="labelValue">{{productionData.value}}</div>
+        </span>
+        <span class="productData">
+            <div class="labelName">Unit: </div>
+            <div class="labelValue">{{productionData.unit}}</div>
+        </span>
+        <span class="productData">
+          <div class="labelName">Factory: </div>
+          <div class="labelValue">{{productionData.factory}}</div>
+        </span>
+        <span class="productData">
+            <div class="labelName">Total Widgets: </div>
+            <div class="labelValue">{{getTotalWidgets(productionData)}}</div>
+        </span>
+        <span class="productData">
+          <div class="widgetData">
+            <!-- TODO: Move class, style, and default values to component as functions. Keep conditional logic out of template-->
+            <div class="widgets" [ngClass]="showWidgetsStyle(productionData,'BLUE')" [style.width.rem]="showWidgetsSize(productionData,'BLUE')">{{showWidgetsSize(productionData,'BLUE')}}</div>
+            <div class="widgets" [ngClass]="showWidgetsStyle(productionData,'RED')" [style.width.rem]="showWidgetsSize(productionData,'RED')">{{showWidgetsSize(productionData,'RED')}}</div>
+            <div class="widgets" [ngClass]="showWidgetsStyle(productionData,'GREEN')" [style.width.rem]="showWidgetsSize(productionData,'GREEN')">{{showWidgetsSize(productionData,'GREEN')}}</div>
+            <div class="widgets" [ngClass]="showWidgetsStyle(productionData,'YELLOW')" [style.width.rem]="showWidgetsSize(productionData,'YELLOW')">{{showWidgetsSize(productionData,'YELLOW')}}</div>
+          </div>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+</div>
+<app-production-data-detail [productionData]="selectedProductionData"></app-production-data-detail>

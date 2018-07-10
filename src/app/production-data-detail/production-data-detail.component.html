@@ -1,0 +1,28 @@
+<div *ngIf="productionData"><!-- Production Detail Detail -->  
+  <div class="container">
+      <h2>{{productionData.factory | uppercase}} Factory</h2>
+     
+      <!-- Edit Production Data -->
+      <div class="editForm">
+        <label>Value:
+          <input [(ngModel)]="productionData.value" placeholder="Value">
+        </label>
+      </div>
+      <div>
+          <label>Unit:
+            <select [(ngModel)]="productionData.unit" name="unit">
+                <option value="Hours">Hours</option>
+                <option value="Minutes">Minutes</option>
+            </select>
+          </label>
+        </div>
+      <div>
+        <label>Factory:
+          <select [(ngModel)]="productionData.factory" name="factory">
+              <option value="Primary">Primary</option>
+              <option value="Secondary">Secondary</option>
+          </select>
+        </label>
+      </div>
+    </div>
+</div>

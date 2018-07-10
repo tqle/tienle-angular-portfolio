@@ -1,0 +1,18 @@
+<div class="graphCard">
+    <header class="graphCardHeader">
+        <h3>{{title}}</h3>
+        <h4>{{subTitle}}</h4>
+    </header>
+  
+    <!-- Check to see if the graph is vertical or horizontal. Vertical is default -->
+    <section [ngClass]="isVertical ? 'graph' : 'horizontalGraph'" [ngClass]="graphDirectionStyles">
+    <!-- loop through data set per data to render a bar graph.  The height is data set to px -->
+        <ng-container *ngIf="isVertical">
+            <div *ngFor="let data of dataSet" class="graphBar" [ngClass]="graphStyles" [style.height.px]="(data)" title="{{data}}"></div>
+        </ng-container>
+        <!-- NOTE: ng-container doesn't render any dom elements -->
+        <ng-container *ngIf="!isVertical">
+            <div *ngFor="let data of dataSet" class="horizontalGraphBar" [ngClass]="graphStyles" [style.width.px]="(data)" title="{{data}}"></div>
+        </ng-container>
+    </section>
+</div>

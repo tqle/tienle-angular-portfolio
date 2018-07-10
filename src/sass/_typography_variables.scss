@@ -1,0 +1,44 @@
+/** Theme Typography **/
+$font-family-stack: ('Avenir Next','Helvetica','Arial', sans-serif);
+
+/** Type Scale - 1.333 Scale: Perfect Fourth **/
+/** Need to find calculation math **/
+$baseFontSize: 16px;
+$superLargeFontSize: 3.157rem;
+$largestFontSize: 2.369rem;
+$largerFontSize: 1.777rem;
+$largeFontSize: 1.33rem;
+$defaultFontSize: 1rem;
+$smallFontSize: 0.75rem;
+$smallerFontSize: 0.563rem;
+$smallestFontSize: 0.422rem;
+
+/** Font Weight **/
+/**
+100    Extra Light or Ultra Light
+200    Light or Thin
+300    Book or Demi
+400    Normal or Regular
+500    Medium
+600    Semibold, Demibold
+700    Bold
+800    Black, Extra Bold or Heavy
+900    Extra Black, Fat, Poster or Ultra Black
+**/
+$fontWeightExtraUltraLight: 100;
+$fontWeightLight: 200;
+$fontWeightBookDemi: 300;
+$fontWeightNormalRegular: 400;
+$fontWeightMedium: 500;
+$fontWeightDemiBold: 600;
+$fontWeightBold: 700;
+$fontWeightExtraBold:800;
+$fontWeightExtraUltraBlack: 900;
+
+/** Headings H1-H6 **/
+$h1: $largestFontSize;
+$h2: $largerFontSize;
+$h3: $largeFontSize;
+$h4: $defaultFontSize;
+$h5: $smallFontSize;
+$h6: $smallerFontSize;
