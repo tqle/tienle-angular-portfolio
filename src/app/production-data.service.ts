@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { ProductionData } from './productionData';
 import { PRODUCTION_DATA_SET } from './mock-productionDataSets';
 
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
+import { Observable ,  of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { MessageService } from './message.service';
