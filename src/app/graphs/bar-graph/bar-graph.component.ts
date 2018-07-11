@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bar-graph',
@@ -10,8 +10,9 @@ export class BarGraphComponent implements OnInit {
   @Input() graphDirectionStyles: string;
   @Input() graphStyles: string;
   @Input() dataSet: Array<number>;
-  @Input() isVertical: boolean = true;
-  //TODO: make data either coming in as @Input to be generic instead of being set here
+  @Input() isVertical = true;
+
+  // TODO: make data either coming in as @Input to be generic instead of being set here
   // dataSet:Array<number> = [];
 
   constructor() {
@@ -19,7 +20,7 @@ export class BarGraphComponent implements OnInit {
   }
 
   ngOnInit() {
-    //MOCK DATA - TODO: Make this a mock service
+    // MOCK DATA - TODO: Make this a mock service
     // this.dataSet = [10,20,30,40,50,60,70];
     // this.dataSet = [10,20,70,40,50,60,20];
   }

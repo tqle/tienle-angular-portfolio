@@ -8,7 +8,7 @@ import { Component, OnInit, Input} from '@angular/core';
 export class CalculatorComponent implements OnInit {
   @Input() title: string;
   @Input() subTitle: string;
-  
+
   @Input() buffer: string;
   runningTotal: number;
   previousOperator: string;
@@ -16,42 +16,51 @@ export class CalculatorComponent implements OnInit {
   /**
    * Initialize state
    */
-  constructor() { 
+  constructor() {
     this.previousOperator = null;
     this.runningTotal = 0;
-    this.buffer = "0";
+    this.buffer = '0';
   }
 
   ngOnInit() {
   }
 
-
+/**
+ * Handle button click
+ * @param value
+ */
   buttonClick(value) {
-    console.log(`button clicked ${value}`);
     if (isNaN(Number.parseInt(value))) {
       this.handleSymbol(value);
     } else {
       this.handleNumber(value);
     }
-    // rerender();
   }
-  
- handleNumber(value:string) {
-    if (this.buffer === "0") {
+
+  /**
+   * Handle numbers
+   * @param value
+   */
+ handleNumber(value: string) {
+    if (this.buffer === '0') {
       this.buffer = value;
     } else {
       this.buffer += value;
     }
   }
-  
-  handleSymbol(value:string) {
+
+/**
+ * Handle calculator symbols
+ * @param value
+ */
+  handleSymbol(value: string) {
     switch (value) {
-      case "C":
-        this.buffer = "0";
+      case 'C':
+        this.buffer = '0';
         this.runningTotal = 0;
         this.previousOperator = null;
         break;
-      case "=":
+      case '=':
         if (this.previousOperator === null) {
           // need two numbers to do math
           return;
@@ -61,20 +70,20 @@ export class CalculatorComponent implements OnInit {
         this.previousOperator = null;
 
         // Coerce number to string
-        this.buffer = "" + this.runningTotal;
-        
+        this.buffer = '' + this.runningTotal;
+
         this.runningTotal = 0;
         break;
 
-      case "←":
+      case '←':
         if (this.buffer.length === 1) {
-          this.buffer = "0";
+          this.buffer = '0';
         } else {
           this.buffer = this.buffer.substring(0, this.buffer.length - 1);
         }
         break;
       default:
-        console.log("Handle Math");
+        // console.log('Handle Math');
         this.handleMath(value);
         break;
     }
@@ -83,36 +92,36 @@ export class CalculatorComponent implements OnInit {
    * Process the operation and flush the value
    * @param intBuffer
    */
-  flushOperation(intBuffer:number) {
-    switch(this.previousOperator){
-      case  "+":
+  flushOperation(intBuffer: number) {
+    switch (this.previousOperator) {
+      case  '+':
         this.runningTotal += intBuffer;
         console.log(`addition total ${this.runningTotal}`);
         break;
-      case "-":
+      case '-':
         this.runningTotal -= intBuffer;
         console.log(`subtraction total ${this.runningTotal}`);
         break;
-      case "×":
+      case '×':
         this.runningTotal *= intBuffer;
         console.log(`multiply total ${this.runningTotal}`);
         break;
-      case "±":
-        console.log("Hello");
+      case '±':
         this.runningTotal = -Math.abs(intBuffer);
         console.log(`negate total ${this.runningTotal}`);
         break;
-      case "÷":
+      case '÷':
         this.runningTotal /= intBuffer;
         console.log(`divide total ${this.runningTotal}`);
         break;
-      default: 
+      default:
         break;
     }
   }
 
-  //value is the operator symbol
-  handleMath(operator) {
+  // value is the operator symbol
+  /** Handle math */
+  handleMath(operator: string) {
     const intBuffer = Number.parseInt(this.buffer);
     if (this.runningTotal === 0) {
       this.runningTotal = intBuffer;
@@ -120,13 +129,13 @@ export class CalculatorComponent implements OnInit {
       console.log(`operator ${operator}`);
       this.flushOperation(intBuffer);
     }
-    if(operator === "±") {
+    if (operator === '±') {
       console.log(`negate buffer ${this.buffer}`);
       // this.previousOperator = operator;
       // this.buffer = "0";
     } else {
       this.previousOperator = operator;
-      this.buffer = "0";
+      this.buffer = '0';
     }
   }
 

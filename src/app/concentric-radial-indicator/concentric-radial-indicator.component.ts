@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { CIRCUMFERENCE_CONST } from '../radial-progress-indicator/circumference_util';
+import { CircumferenceUtil } from '../radial-progress-indicator/circumference_util';
 
 
 @Component({
@@ -12,7 +12,7 @@ export class ConcentricRadialIndicatorComponent implements OnInit {
 
   @Input() title: string;
   @Input() subTitle: string;
-  
+
   @Input() meterColor: string;
   @Input() valueColor1: string;
   @Input() valueColor2: string;
@@ -27,14 +27,14 @@ export class ConcentricRadialIndicatorComponent implements OnInit {
   ngOnInit() {
   }
 
-    /**
+ /**
    * Converts value or degrees into the proper dash offset for the progress indicator
-   * @param value 
+   * @param value
    */
-  calculateProgress(value:number):number{
-    //TODO: Check value if value > 100, 0 or null
-    let progress =  value / 100;
-    let dashoffset = CIRCUMFERENCE_CONST.circumference * (1 - progress);
+  calculateProgress(value: number): number {
+    // TODO: Check value if value > 100, 0 or null
+    const progress =  value / 100;
+    const dashoffset = CircumferenceUtil.CIRCUMFERENCE * (1 - progress);
     return dashoffset;
   }
 

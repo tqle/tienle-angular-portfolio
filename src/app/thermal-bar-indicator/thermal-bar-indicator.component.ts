@@ -18,27 +18,26 @@ export class ThermalBarIndicatorComponent implements OnInit {
 
   @Input() strokeDashArray: number;
   @Input() strokeDashOffset: number;
-  
-  ngOnInit() {
-  }
+
+  ngOnInit() {}
 
   /**
    * Calculate bar progress indicator by value and total length
    */
-  calculateProgress(value:number, length: number):number{
-    let progress = length - (length * ((100 - value) /100));
+  calculateProgress(value: number, length: number): number {
+    const progress = length - (length * ((100 - value) / 100));
     return progress;
   }
 
-  calculatePercentage():number{
+  calculatePercentage(): number {
     return 100 - this.strokeDashOffset;
   }
 
-  showRemainingPercentage():string{
-    return "Remaining Percentage: "+ this.calculatePercentage() + " %";
+  showRemainingPercentage(): string {
+    return 'Remaining Percentage: ' + this.calculatePercentage() + ' %';
   }
 
-  showActualPercentage():string{
-    return "Actual Percentage: "+ this.strokeDashOffset + " %";
+  showActualPercentage(): string {
+    return 'Actual Percentage: ' + this.strokeDashOffset + ' %';
   }
 }

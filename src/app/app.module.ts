@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
-//Components
+// Components
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
@@ -18,11 +18,11 @@ import { HeroService } from './hero.service';
 import { ProductionDataService } from './production-data.service';
 import { MessageService } from './message.service';
 
-//App Routing Module
+// App Routing Module
 
 import { AppRoutingModule } from './/app-routing.module';
 
-//Top Navigation Routed Components
+// Top Navigation Routed Components
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { GraphsComponent } from './graphs/graphs.component';

@@ -1,17 +1,17 @@
 import { ProductionData } from './productionData';
 
-//Mock Production Data
+// Mock Production Data
 export const PRODUCTION_DATA_SET: ProductionData[] = [
-  { 
+  {
     id: 1,
     value: 5,
     unit: 'Hours',
     factory: 'Primary',
     widgets: {
-      "blue": 1,
-      "red": 5,
-      "green": 4,
-      "yellow": 2
+      'blue': 1,
+      'red': 5,
+      'green': 4,
+      'yellow': 2
     }
   },
   {
@@ -20,22 +20,22 @@ export const PRODUCTION_DATA_SET: ProductionData[] = [
     unit: 'Minutes',
     factory: 'Secondary',
     widgets: {
-      "blue": 0,
-      "red": 0,
-      "green": 1,
-      "yellow": 7
+      'blue': 0,
+      'red': 0,
+      'green': 1,
+      'yellow': 7
     }
   },
-  { 
-    id: 3,  
+  {
+    id: 3,
     value: 6,
     unit: 'Hours',
     factory: 'Primary',
-    widgets: {   
-      "blue": 3,
-      "red": 8,
-      "green": 1,
-      "yellow": 1
+    widgets: {
+      'blue': 3,
+      'red': 8,
+      'green': 1,
+      'yellow': 1
     }
   },
   {
@@ -44,13 +44,14 @@ export const PRODUCTION_DATA_SET: ProductionData[] = [
     unit: 'Minutes',
     factory: 'Secondary',
     widgets: {
-      "blue": 10,
-      "red": 3,
-      "green": 0,
-      "yellow": 10
+      'blue': 10,
+      'red': 3,
+      'green': 0,
+      'yellow': 10
     }
   },
 ];
+
 // export const PRODUCTION_DATA_SET: ProductionData[] = [
 //     {
 //       time: "12:01:00",

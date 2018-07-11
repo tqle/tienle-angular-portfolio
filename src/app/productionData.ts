@@ -1,6 +1,6 @@
 import { Widgets } from './widgets';
 
-export class ProductionData{
+export class ProductionData {
     // time: string;
     // hours_ago: number;
     // minutes_ago: number;
@@ -10,5 +10,4 @@ export class ProductionData{
     unit: string;
     factory: string;
     widgets: Widgets;
-
 }

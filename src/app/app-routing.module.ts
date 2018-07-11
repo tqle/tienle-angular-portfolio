@@ -11,10 +11,10 @@ import { TypographyComponent } from './typography/typography.component';
 import { CardsComponent } from './cards/cards.component';
 import { IndicatorsComponent } from './indicators/indicators.component';
 
-//NOTE: Need this for SVG linear gradient paths to work. 
+// NOTE: Need this for SVG linear gradient paths to work.
 import { APP_BASE_HREF } from '@angular/common';
 
-const routes:Routes = [
+const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },

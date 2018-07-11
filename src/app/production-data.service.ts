@@ -16,31 +16,31 @@ const httpOptions = {
 @Injectable()
 export class ProductionDataService {
 
-  private productionDataUrl = 'api/productionDataSets'; //URL to web api
-  
+  private productionDataUrl = 'api/productionDataSets'; // URL to web api
+
   constructor(
     private http: HttpClient,
-    private messageService:MessageService
+    private messageService: MessageService
   ) { }
 
 
   getMockProductionDataSets(): Observable<ProductionData[]> {
-    //TODO: Send the mesage _after_ fetching the production data
-    this.messageService.add('ProductionDataService: fetched production data sets')
+    // TODO: Send the mesage _after_ fetching the production data
+    this.messageService.add('ProductionDataService: fetched production data sets');
     return of(PRODUCTION_DATA_SET);
   }
 
   /** Get production data form the server */
-  getProductionDataSets(): Observable<ProductionData[]>{
+  getProductionDataSets(): Observable<ProductionData[]> {
     return this.http.get<ProductionData[]>(this.productionDataUrl)
     .pipe(
       tap(productionDataSets => this.log(`fetched production data sets`)),
       catchError(this.handleError('getProductionDataSets', []))
     );
   }
-  
+
   /** GET: Production Data Set by id. Will 404 if id not found */
-  getProductionDataSet(id:number): Observable<ProductionData>{
+  getProductionDataSet(id: number): Observable<ProductionData> {
     const url = `${this.productionDataUrl}/${id}`;
     return this.http.get<ProductionData>(url).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),
@@ -57,15 +57,15 @@ export class ProductionDataService {
   }
 
   /** POST: add a new production data to the server */
-  addProductionData(productionData: ProductionData): Observable<ProductionData>{
+  addProductionData(productionData: ProductionData): Observable<ProductionData> {
     return this.http.post<ProductionData>(this.productionDataUrl, productionData, httpOptions).pipe(
-      tap((productionData: ProductionData) => this.log(`add production data set w/ value=${productionData.value}`)),
+      tap((aProductionData: ProductionData) => this.log(`add production data set w/ value=${aProductionData.value}`)),
       catchError(this.handleError<ProductionData>('addProductionData'))
     );
   }
 
   /** DELETE: delete the production data from the server */
-  deleteProductionData(productionData: ProductionData | number): Observable<ProductionData>{
+  deleteProductionData(productionData: ProductionData | number): Observable<ProductionData> {
     const id = typeof productionData === 'number' ? productionData : productionData.id;
     const url = `${this.productionDataUrl}/${id}`;
 
@@ -76,26 +76,26 @@ export class ProductionDataService {
   }
 
   /* Log a Production Data Service mesage with the MessageService */
-  private log(message: String){
+  private log(message: String) {
     this.messageService.add('ProductionDataService: ' + message);
   }
 
-    /**
+  /**
    * Handle Http operation that failed.
    * Let the app continue
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  private handleError<T> (operation = 'operation', result? : T){
+  private handleError<T> (operation = 'operation', result?: T) {
     return(error: any): Observable<T> => {
       // TODO: Send the error to the remote logging infrastructure
-      console.error(error); //log to console instead
+      console.error(error); // log to console instead
 
       // TODO: Better job of transforming error for user consumption
       this.log(`${operation} failed: ${error.message}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
-    }
+    };
   }
 }

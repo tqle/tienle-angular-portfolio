@@ -1,7 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class InMemoryDataService implements InMemoryDbService {
-    createDb(){
+    createDb() {
         const heroes = [
             { id: 1, name: 'Anni Albers' },
             { id: 2, name: 'Josef Albers' },
@@ -15,16 +15,16 @@ export class InMemoryDataService implements InMemoryDbService {
             { id: 10, name: 'Marcel Breuer' }
         ];
         const productionDataSets = [
-            { 
+            {
             id: 1,
             value: 5,
             unit: 'Hours',
             factory: 'Primary',
             widgets: {
-              "blue": 1,
-              "red": 5,
-              "green": 4,
-              "yellow": 2
+              'blue': 1,
+              'red': 5,
+              'green': 4,
+              'yellow': 2
             }
           },
           {
@@ -33,22 +33,22 @@ export class InMemoryDataService implements InMemoryDbService {
             unit: 'Minutes',
             factory: 'Secondary',
             widgets: {
-              "blue": 0,
-              "red": 0,
-              "green": 1,
-              "yellow": 7
+              'blue': 0,
+              'red': 0,
+              'green': 1,
+              'yellow': 7
             }
           },
-          { 
-            id: 3,  
+          {
+            id: 3,
             value: 6,
             unit: 'Hours',
             factory: 'Primary',
-            widgets: {   
-              "blue": 3,
-              "red": 8,
-              "green": 1,
-              "yellow": 1
+            widgets: {
+              'blue': 3,
+              'red': 8,
+              'green': 1,
+              'yellow': 1
             }
           },
           {
@@ -57,13 +57,13 @@ export class InMemoryDataService implements InMemoryDbService {
             unit: 'Minutes',
             factory: 'Secondary',
             widgets: {
-              "blue": 10,
-              "red": 3,
-              "green": 0,
-              "yellow": 10
+              'blue': 10,
+              'red': 3,
+              'green': 0,
+              'yellow': 10
             }
           }
         ];
-        return {heroes,productionDataSets};
+      return {heroes, productionDataSets};
     }
 }

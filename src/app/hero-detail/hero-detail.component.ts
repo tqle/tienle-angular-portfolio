@@ -12,7 +12,7 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-detail.component.scss']
 })
 export class HeroDetailComponent implements OnInit {
-  
+
   @Input() hero: Hero;
 
   constructor(
@@ -32,7 +32,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   /** Return back to the previous location */
-  goBack(): void{
+  goBack(): void {
     this.location.back();
   }
 

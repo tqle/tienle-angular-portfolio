@@ -7,7 +7,7 @@ import { ProductionData } from '../productionData';
   styleUrls: ['./production-data-detail.component.scss']
 })
 export class ProductionDataDetailComponent implements OnInit {
-  
+
   @Input() productionData: ProductionData;
 
   constructor() { }

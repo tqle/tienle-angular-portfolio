@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 
-//Test import mock data without service
+// Test import mock data without service
 // import { HEROES } from '../mock-heroes';
 
-//Import service
+// Import service
 import { HeroService } from '../hero.service';
 import { HEROES } from '../mock-heroes';
 
@@ -15,11 +15,11 @@ import { HEROES } from '../mock-heroes';
 })
 
 export class HeroesComponent implements OnInit {
-  //Test mock heroes without service
-  //heroes = HEROES;
+  // Test mock heroes without service
+  // heroes = HEROES;
 
-  //Hero Data Set Declaration to set by service
-  heroes:Hero[];
+  // Hero Data Set Declaration to set by service
+  heroes: Hero[];
   // selectedHero: Hero;
 
   constructor(private heroService: HeroService) {}
@@ -29,7 +29,7 @@ export class HeroesComponent implements OnInit {
   }
 
   /** Get Heroes from service of mock data */
-  getHeroes():void{
+  getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
   }
@@ -37,15 +37,15 @@ export class HeroesComponent implements OnInit {
   /** Add Hero */
   add(name: string): void {
     name = name.trim();
-    if(!name) { return; }
+    if (!name) { return; }
     this.heroService.addHero({ name } as Hero)
-      .subscribe(hero => { 
+      .subscribe(hero => {
         this.heroes.push(hero);
       });
   }
 
   /** Delete Hero */
-  delete(hero:Hero): void {
+  delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();
   }
