@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CIRCUMFERENCE_CONST } from './circumference_util';
+import { CircumferenceUtil } from './circumference_util';
 
 @Component({
   selector: 'app-radial-progress-indicator',
@@ -29,7 +29,7 @@ export class RadialProgressIndicatorComponent implements OnInit {
   calculateProgress(value: number): number {
     // TODO: Check value if value > 100, 0 or null
     const progress =  value / 100;
-    const dashoffset = CIRCUMFERENCE_CONST.circumference * (1 - progress);
+    const dashoffset = CircumferenceUtil.CIRCUMFERENCE * (1 - progress);
     return dashoffset;
   }
 
