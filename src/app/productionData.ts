@@ -1,6 +1,6 @@
 import { Widgets } from './widgets';
 
-export class ProductionData {
+export interface ProductionData {
     // time: string;
     // hours_ago: number;
     // minutes_ago: number;
